@@ -19,6 +19,7 @@ margin-bottom:20px;
 const Description = styled.div`
 font-size:24x;
 font-weight:500;
+padding-bottom:20px;
 `
 const InputContainer = styled.div`
 width:50%;
