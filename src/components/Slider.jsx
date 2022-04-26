@@ -9,6 +9,7 @@ height:100vh;
 display:flex;
 position:relative;
 overflow:hidden;
+color:rgba(0,0,0,0.7);
 
 `
 
@@ -35,6 +36,7 @@ z-index:1;
 const Wrapper = styled.div`
 height:100%;
 display:flex;
+transition:all 0.8s ease-in-out;
 transform:translateX(${props => props.slideIndex * -100}vw);
 `
 const Slide = styled.div`
@@ -71,7 +73,14 @@ const Button = styled.button`
 padding:10px;
 font-size:20px;
 background-color:trasnparent;
-curson:pointer;
+cursor:pointer;
+border:none;
+outline:none;
+font-weight:bold;
+
+&:hover {
+    background-color:rgba(0,0,0,0.1);
+}
 `
 
 
@@ -92,7 +101,7 @@ const [slideIndex,setSlideIndex] = React.useState(0)
     </Arrow>
     <Wrapper slideIndex ={slideIndex}>
         {sliderItems.map((item) => (
-        <Slide bg={item.bg}>
+        <Slide bg={item.bg} key={item.id}>
      <ImgContainer>
      <Image src={item.img}/>
      </ImgContainer>

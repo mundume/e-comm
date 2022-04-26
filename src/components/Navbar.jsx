@@ -32,11 +32,15 @@ padding:5px;
 `
 const Input = styled.input`
 border:none;
+:focus{
+    outline:none;
+}
 
 `
 const Center = styled.div`
 flex:1;
 text-align:center;
+
 
 
 `
