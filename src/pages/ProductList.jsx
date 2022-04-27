@@ -11,6 +11,7 @@ const Container = styled.div``
 
 const Title = styled.h1`
 margin:20px;
+color:rgba(0,0,0,0.7);
 
 `
 
@@ -27,11 +28,15 @@ const FilterText = styled.span`
 font-size:20px;
 font-weight:600;
 margin-right:20px;
+color:rgb(0,0,0,0.7);
+
 `
 const Select = styled.select`
 padding:10px;
 margin-right:20px;
 outline:none;
+border:none;
+background-color:lightblue;
 `
 
 const Option = styled.option`
