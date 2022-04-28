@@ -1,10 +1,13 @@
 import React from 'react'
 import Announcement from '../components/Announcement'
+import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import styled from 'styled-components'
 import Products from '../components/Products'
 import Newsletter from '../components/Newsletter'
-import Footer from '../components/Footer'
+import styled from 'styled-components'
+
+
+
 
 
 const Container = styled.div``

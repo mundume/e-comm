@@ -1,3 +1,4 @@
+ //Creating A Mobile Responsivess Function To avoid Repetition
 import { css } from "styled-components";
 
 export const mobile = (props) => {
