@@ -12,6 +12,7 @@ import App from './App';
 
 const rootElement = document.getElementById("root");
 render(
+  
   <BrowserRouter>
   <Routes>
     <Route path="/" element={<App />} />
@@ -21,9 +22,11 @@ render(
     <Route path="/product" element={<Product />} />
     <Route path="/productlist" element={<ProductList />} />
     <Route path="/register" element={<Register />} />
+    
 
 
     </Routes>
   </BrowserRouter>,
   rootElement
+  
 );
