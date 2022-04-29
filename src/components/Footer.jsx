@@ -1,11 +1,13 @@
 import { Facebook, Instagram, Mail, Phone, Room, Twitter } from '@mui/icons-material'
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 const Container = styled.div`
 display:flex;
 background-color:lightblue;
 color:rgba(0,0,0,0.7);
+${mobile ({flexDirection:"column"})};
 
 
 `
@@ -42,7 +44,7 @@ margin-right:20px;
 const Center = styled.div`
 flex:1;
 padding:20px;
-
+${mobile ({display:"none"})};
 
 `
 const Title = styled.h3`

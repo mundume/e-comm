@@ -1,6 +1,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 
 
@@ -18,6 +19,8 @@ const Wrapper = styled.div`
 width:25%;
 padding:20px;
 background-color:white;
+
+${mobile({width: "70%" })}
 
 ` 
 const Title = styled.h1`
@@ -59,6 +62,9 @@ font-size:12px;
 cursor:pointer;
 color:#050A30;
 font-weight:600;
+display:flex;
+align-items:center;
+justify-content:center;
 
 &:hover{
     text-decoration:underline solid #000C66;

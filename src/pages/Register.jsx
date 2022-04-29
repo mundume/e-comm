@@ -1,6 +1,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 const Container = styled.div`
 width:100vw;
@@ -16,6 +17,7 @@ const Wrapper = styled.div`
 width:40%;
 padding:20px;
 background-color:white;
+${mobile({width: "70%" , overflow:"none"})}
 
 ` 
 const Title = styled.h1`
@@ -33,7 +35,7 @@ flex-wrap:wrap;
 const Input = styled.input`
 flex:1;
 min-width:60%;
-margin:20px 10px 0px 0px;
+margin:10px 10px 0px 0px;
 padding:10px;
 border:1px solid lightblue;
 outline:none;
@@ -51,7 +53,7 @@ padding:15px 10px;
 background-color:lightblue;
 cursor:pointer;  
 font-weight:500;
-margin: auto;
+margin: 0px auto;
 `
 
 const Register = () => {
