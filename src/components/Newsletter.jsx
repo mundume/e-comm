@@ -36,6 +36,7 @@ ${mobile ({width:"100%"})};
 `
 const Input = styled.input`
 border:none;
+
 flex:8;
 :focus{
     outline:none;

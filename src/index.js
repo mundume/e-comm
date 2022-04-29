@@ -1,10 +1,29 @@
 import React from 'react';
+import { render } from "react-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ReactDOM from 'react-dom';
+import Cart from "./pages/Cart.jsx";
+import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
+import Product from "./pages/Product.jsx";
+import ProductList from "./pages/ProductList.jsx";
+import Register from "./pages/Register.jsx";
 import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const rootElement = document.getElementById("root");
+render(
+  <BrowserRouter>
+  <Routes>
+    <Route path="/" element={<App />} />
+    <Route path="/cart" element={<Cart />} />
+    
+    <Route path="/login" element={<Login />} />
+    <Route path="/product" element={<Product />} />
+    <Route path="/productlist" element={<ProductList />} />
+    <Route path="/register" element={<Register />} />
+
+
+    </Routes>
+  </BrowserRouter>,
+  rootElement
 );

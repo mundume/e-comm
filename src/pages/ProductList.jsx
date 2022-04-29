@@ -41,7 +41,7 @@ const Select = styled.select`
 padding:10px;
 margin-right:20px;
 outline:none;
-border:none;
+border:1px solid lightblue;
 background:none;
 ${mobile({margin: "10px 0px" })}
 `

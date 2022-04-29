@@ -1,12 +1,18 @@
-import Cart from "./pages/Cart.jsx";
+import { Link } from "react-router-dom";
+
 import Home from "./pages/Home.jsx";
-import Login from "./pages/Login.jsx";
-import Product from "./pages/Product.jsx";
-import ProductList from "./pages/ProductList.jsx";
-import Register from "./pages/Register.jsx";
+
 const App = () => {
-  return < Cart/>;
+  return( 
+    <>
+    < Home/>
+    
+
+    </>
   
-};
+  
+  
+  
+  )};
 
 export default App;
