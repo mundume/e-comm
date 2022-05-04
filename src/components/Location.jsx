@@ -30,9 +30,9 @@ export default function CustomizedInputBase() {
   return (
 <Container>
 
-<Paper style={{border:"1px solid lightblue", marginTop:'10px' }}
+<Paper style={{border:"1px solid lightblue", marginTop:'10px',borderRadius:"10px", padding:"4px"}}
       component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center',justifyContent:'center', width: '98%', margin:'auto' }}
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center',justifyContent:'center', width: '90%', margin:'auto' }}
     >
      
       <InputBase
