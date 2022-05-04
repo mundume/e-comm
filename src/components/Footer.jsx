@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Mail, Phone, Room, Twitter } from '@mui/icons-material'
 import React from 'react'
 import styled from 'styled-components'
-import { mobile } from '../responsive'
+import { mobile, tablet } from '../responsive'
 
 const Container = styled.div`
 display:flex;
@@ -45,6 +45,7 @@ const Center = styled.div`
 flex:1;
 padding:20px;
 ${mobile ({display:"none"})};
+${tablet ({display:"none"})};
 
 `
 const Title = styled.h3`
@@ -65,6 +66,7 @@ width:50%;
 cursor:pointer;
 font-weight:500;
 margin-bottom:10px;
+
 
 &:hover{
     font-weight:bold;

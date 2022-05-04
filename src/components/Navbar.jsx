@@ -2,7 +2,7 @@ import { Search, ShoppingCartOutlined } from '@mui/icons-material'
 import React from 'react'
 import styled from 'styled-components'
 import { Badge } from '@mui/material'
-import { mobile } from '../responsive'
+import { mobile, tablet } from '../responsive'
 
 const Container = styled.div`
 height:60px;
@@ -21,6 +21,7 @@ flex:1;
 display:flex;
 align-items:center;
 
+
 `
 const Language = styled.span`
 font-size:14px;
@@ -32,10 +33,12 @@ display:flex;
 align-items:center;
 margin-left:25px;
 padding:5px;
+${mobile ({display:"none"})};
+${tablet ({display:"none"})};
 `
 const Input = styled.input`
 border:none;
-${mobile ({width:"40px"})};
+${mobile ({display:"none"})};
 
 :focus{
     outline:none;
@@ -60,7 +63,7 @@ flex:1;
 display:flex;
 align-items:center;
 justify-content:flex-end;
-${mobile ({flex:2, justifyContent:"center"})};
+${mobile ({flex:2, justifyContent:"space-around"})};
 
 `
 const MenuItem = styled.div`
