@@ -6,44 +6,45 @@ import Typography from '@mui/material/Typography';
 
 const images = [
   {
-    url: '/static/images/buttons/breakfast.jpg',
+    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Liquor_store_in_Breckenridge_Colorado.jpg/280px-Liquor_store_in_Breckenridge_Colorado.jpg',
     title: 'Liqour Area',
     width: '40%',
   },
   {
-    url: '/static/images/buttons/burgers.jpg',
-    title: 'Foods And Drinks',
+    url: 'https://media.istockphoto.com/photos/plant-based-vegan-food-for-a-healthy-lifestyle-picture-id1301035781?s=612x612',
+    title: 'Foods',
     width: '30%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
-    title: 'Electronics',
+    url: 'https://images.unsplash.com/photo-1650784424602-b892f7292b9f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    title: 'Kids',
     width: '30%',
   },
   {
-    url: '/static/images/buttons/breakfast.jpg',
+    url: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvbmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
     title: 'Phones',
     width: '40%',
   },
   {
-    url: '/static/images/buttons/burgers.jpg',
-    title: 'Swag',
+    url: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80',
+    title: 'Fashion',
     width: '30%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
-    title: 'Food',
+    url: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=965&q=80',
+    title: 'Gaming',
     width: '30%',
   },
 ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
-  height: 200,
-  [theme.breakpoints.down('sm')]: {
-    width: '100% !important', // Overrides inline-style
-    height: 100,
-  },
+  height: "200px",
+ // [themebreakpoints.down('sm')]: {
+      
+//width: '100% !important', // Overrides inline-style
+  //  height: 100,
+ // },
   '&:hover, &.Mui-focusVisible': {
     zIndex: 1,
     '& .MuiImageBackdrop-root': {
@@ -86,7 +87,7 @@ const ImageBackdrop = styled('span')(({ theme }) => ({
   right: 0,
   top: 0,
   bottom: 0,
-  backgroundColor: 'lightblue',
+  backgroundColor: 'transparent',
   opacity: 'none',
   transition: theme.transitions.create('opacity'),
 }));

@@ -12,22 +12,22 @@ const images = [
   {
     
     imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://ke.jumia.is/cms/2022/W17/HP/Revised/KE_Influencers_Collections_0422_SB.jpg',
   },
   {
     
     imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://ke.jumia.is/cms/2022/W17/HP/Default/Banners/_DB1-copy-6.jpg',
   },
   {
    
     imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
+      'https://ke.jumia.is/cms/2022/W17/HP/Default/HypeDeals/_DB1-copy.jpg',
   },
   {
     
     imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://ke.jumia.is/cms/2022/W17/HP/Default/Banners/_DB1-copy-13.jpg',
   },
 ];
 

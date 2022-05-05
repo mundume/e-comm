@@ -22,10 +22,13 @@ display:flex;
 align-items:center;
 
 
+
+
 `
 const Language = styled.span`
 font-size:14px;
 cursor : pointer;
+${mobile ({padding:"0px 10px"})}
 `
 const SearchContainer = styled.div`
 border:0.5px solid lightgray;
