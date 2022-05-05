@@ -15,10 +15,9 @@ display:flex;
 `
 const Image = styled.img`
 width:100%;
-height:100%;
-flex-wrap:wrap;
+
 object-fit:cover;
-${mobile ({height:"30vh", width:'100%', flexWrap:'wrap'})};
+${mobile ({maxHeight:"200px", width:'100%', flexWrap:'wrap'})};
 `
 
 const Info = styled.div`

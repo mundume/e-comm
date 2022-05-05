@@ -12,11 +12,7 @@ position:relative;
 overflow:hidden;
 color:rgba(0,0,0,0.7);
 ${mobile ({display:"none"})};
-${tablet ({display:"none"})}
 `
-
-
-
 const Arrow = styled.div`
 width:50px;
 height:50px;

@@ -2,7 +2,7 @@ import { Search, ShoppingCartOutlined } from '@mui/icons-material'
 import React from 'react'
 import styled from 'styled-components'
 import { Badge } from '@mui/material'
-import { mobile, tablet } from '../responsive'
+import { mobile } from '../responsive'
 
 const Container = styled.div`
 height:60px;
@@ -34,7 +34,7 @@ align-items:center;
 margin-left:25px;
 padding:5px;
 ${mobile ({display:"none"})};
-${tablet ({display:"none"})};
+
 `
 const Input = styled.input`
 border:none;
