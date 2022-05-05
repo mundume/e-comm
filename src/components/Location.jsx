@@ -8,12 +8,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import Banner from '../components/Banner';
 import { desktop } from '../responsive'
 import { useMediaQuery } from '@material-ui/core';
-
+import CategoryGrid from '../components/CategoryGrid'
 
 import styled from 'styled-components';
 
 const Container = styled.div`
-max-height:700px;
+min-height:700px;
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -47,6 +47,7 @@ export default function CustomizedInputBase() {
       
     </Paper>
     <Banner/>
+    <CategoryGrid/>
     </Container>
     
   );

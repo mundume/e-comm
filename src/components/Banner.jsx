@@ -49,7 +49,7 @@ function Carousel() {
   };
 
   return (
-    <Box sx={{ width:'100%', flexGrow: 1 , margin:"20px"}}>
+    <Box sx={{ width:'100%', flexGrow: 1 , margin:"0" ,bgcolor:'lightblue'}}>
       
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -63,8 +63,9 @@ function Carousel() {
               <Box
                 component="img"
                 sx={{
-                  height: 255,
+                  height: 125,
                   display: 'block',
+                  bgcolor:'lightblue',
                   
                   overflow: 'none',
                   width: '100%',
