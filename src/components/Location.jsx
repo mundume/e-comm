@@ -15,7 +15,7 @@ import OfficialStores from './OfficialStores';
 import Headings from './Headings';
 
 const Container = styled.div`
-height:750px;
+height:560px;
 display:flex;
 flex-direction:column;
 align-items:center;

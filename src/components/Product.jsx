@@ -1,11 +1,12 @@
-import { FavoriteBorderOutlined, SearchOutlined, Send, ShoppingCartOutlined } from '@mui/icons-material'
+import { FavoriteBorderOutlined, Rowing, SearchOutlined, Send, ShoppingCartOutlined } from '@mui/icons-material'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
 import Headings from './Headings'
 
 
+
 const Info = styled.div`
-opacity:0;
+
 Width:100%;
 height:100%;
 position:absolute;
@@ -17,11 +18,13 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-transition:all 0.3s ease;
 cursor:pointer;
-${mobile({ flexDirection: 'column', justifyContent: 'space-around' })}
+${mobile({ flexDirection: 'column', justifyContent: 'space-between' })}
 `
-
+ const  Dinner = styled.div`
+ display:flex;
+ flex-direction:row;
+ flex-wrap:wrap;`
 
  const Container = styled.div`
  flex: 1;
@@ -32,8 +35,8 @@ ${mobile({ flexDirection: 'column', justifyContent: 'space-around' })}
  align-items:center;
  justify-content:center;
 position:relative;
-${mobile ({maxWidth:"150px", height:"200px"})};
- 
+${mobile ({width:"150px", height:"150px",  flexDirection:'row'})};
+
 &:hover ${Info} {
   opacity:1;
 }
@@ -58,11 +61,17 @@ ${mobile ({maxWidth:"150px", height:"200px"})};
   width: 60%;
   border:none;
   padding: 10px;
-  background-color: black;
+  
   color: rgba(0,0,0,0.8);
   cursor:pointer;
-  font-weight: 600;
+  font-weight: 700;
   background-color:white;
+  ${mobile ({backgroundColor:"transparent", border:"2px solid #1E5162"})};
+  &:hover{
+    background-color: #1E5162;
+    color:white;
+  }
+  
   `
 
 
@@ -71,12 +80,12 @@ ${mobile ({maxWidth:"150px", height:"200px"})};
  width:40px;
   height:40px;
   border-radius:50%;
-  background-color:#fff;
+  background-color:transparent;
   display:flex;
   align-items:center;
   justify-content:center;
   margin:10px;
-  transition:all 0.3s ease;
+  
   ${mobile ({width:"30px", height:"30px"})};
 
 
@@ -85,30 +94,37 @@ ${mobile ({maxWidth:"150px", height:"200px"})};
     transform:scale(1.2);
   }
  `
-
+const   Text = styled.div``
  
  const Product = ({ item }) => {
   return (
+    <Dinner>
     <Container>
       <Circle />
       
       <Image src={item.img} />
       <Info>
         
-        <Icon style={{color:'black'}}>
+        <Icon style={{color:'#1E5162'}}>
+         
           <ShoppingCartOutlined />
           
         </Icon>
-         
         <Button>
-         show more!
+         {item.price}
         </Button>
-        <Icon>
+        <Icon style={{color:'#1E5162'}}>
+         
           <FavoriteBorderOutlined />
+          
         </Icon>
+         
+       
+       
         
       </Info>
     </Container>
+    </Dinner>
   );
 };
 
