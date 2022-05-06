@@ -13,7 +13,7 @@ import CategoryGrid from '../components/CategoryGrid'
 import styled from 'styled-components';
 
 const Container = styled.div`
-min-height:700px;
+height:600px;
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -30,7 +30,7 @@ export default function CustomizedInputBase() {
   return (
 <Container>
 
-<Paper style={{marginBottom: '50px',border:"1px solid lightblue", marginTop:'10px',borderRadius:"10px", padding:"4px"}}
+<Paper style={{marginBottom:'10px',border:"1px solid lightblue", marginTop:'10px',borderRadius:"10px", padding:"4px"}}
       component="form"
       sx={{ p: '2px 4px', display: 'flex', alignItems: 'center',justifyContent:'center', width: '90%', margin:'auto' }}
     >

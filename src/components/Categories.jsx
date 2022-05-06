@@ -19,7 +19,8 @@ color:white;
 margin-bottom:10px;`
 const Categories = () => {
   return(
-   <Container> 
+   <Container>
+     
     
         {categories.map((category) => (
          

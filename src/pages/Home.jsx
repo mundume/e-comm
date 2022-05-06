@@ -8,6 +8,7 @@ import Products from '../components/Products'
 import Slider from '../components/Slider'
 import Location from '../components/Location'
 import Banner from '../components/Banner'
+import Headings from '../components/Headings'
 const Home = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const Home = () => {
       <Slider/>
       <Location/>
       <Banner/>
+      <Headings title="Trending"/>
       <Categories/>
       <Banner/>
       <Products/>
