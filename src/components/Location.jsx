@@ -11,14 +11,17 @@ import { useMediaQuery } from '@material-ui/core';
 import CategoryGrid from '../components/CategoryGrid'
 
 import styled from 'styled-components';
+import OfficialStores from './OfficialStores';
+import Headings from './Headings';
 
 const Container = styled.div`
-height:600px;
+height:750px;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 background-color:lightblue;
+
 ${desktop ({display:"none"})};
 
 
@@ -46,6 +49,8 @@ export default function CustomizedInputBase() {
       <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
       
     </Paper>
+    <Headings title= 'Check out our official stores' />
+    <OfficialStores/>
     <Banner/>
     <CategoryGrid/>
     </Container>

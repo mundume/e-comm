@@ -1,5 +1,7 @@
-import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material'
+import { FavoriteBorderOutlined, SearchOutlined, Send, ShoppingCartOutlined } from '@mui/icons-material'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
+import Headings from './Headings'
 
 
 const Info = styled.div`
@@ -14,20 +16,23 @@ z-index:3;
 display:flex;
 align-items:center;
 justify-content:center;
+
 transition:all 0.3s ease;
 cursor:pointer;
+${mobile({ flexDirection: 'column', justifyContent: 'space-around' })}
 `
 
 
  const Container = styled.div`
  flex: 1;
  margin:5px;
- min-width:280px;
+ max-width:280px;
  height:350px;
  display:flex;
  align-items:center;
  justify-content:center;
 position:relative;
+${mobile ({maxWidth:"150px", height:"200px"})};
  
 &:hover ${Info} {
   opacity:1;
@@ -41,12 +46,24 @@ position:relative;
  border-radius:50%;
  background-color:#fff;
  position:absolute;
+ ${mobile ({display:"none"})};
  `
 
  const Image = styled.img`
  height:75%;
  z-index:2;
  `
+
+ const Button = styled.button`
+  width: 60%;
+  border:none;
+  padding: 10px;
+  background-color: black;
+  color: rgba(0,0,0,0.8);
+  cursor:pointer;
+  font-weight: 600;
+  background-color:white;
+  `
 
 
 
@@ -60,10 +77,11 @@ position:relative;
   justify-content:center;
   margin:10px;
   transition:all 0.3s ease;
+  ${mobile ({width:"30px", height:"30px"})};
 
 
   &:hover {
-    background-color:#e9f5f5;
+ background-color:#e9f5f5;
     transform:scale(1.2);
   }
  `
@@ -73,17 +91,22 @@ position:relative;
   return (
     <Container>
       <Circle />
+      
       <Image src={item.img} />
       <Info>
-        <Icon>
+        
+        <Icon style={{color:'black'}}>
           <ShoppingCartOutlined />
+          
         </Icon>
-        <Icon>
-          <SearchOutlined />
-        </Icon>
+         
+        <Button>
+         show more!
+        </Button>
         <Icon>
           <FavoriteBorderOutlined />
         </Icon>
+        
       </Info>
     </Container>
   );

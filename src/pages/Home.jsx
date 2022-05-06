@@ -9,6 +9,7 @@ import Slider from '../components/Slider'
 import Location from '../components/Location'
 import Banner from '../components/Banner'
 import Headings from '../components/Headings'
+import OfficialStores from '../components/OfficialStores'
 const Home = () => {
   return (
     <div>
@@ -18,9 +19,9 @@ const Home = () => {
       <Location/>
       <Banner/>
       <Headings title="Trending"/>
-      <Categories/>
-      <Banner/>
       <Products/>
+      <Banner/>
+      <Categories/>
       <Newsletter/>
       <Footer/>
     </div>

@@ -1,4 +1,5 @@
 import { Add, Remove } from '@mui/icons-material'
+import { Grid } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
 import Announcement from '../components/Announcement'
@@ -133,10 +134,12 @@ font-weight:500;
 const Product = () => {
   return (
     <Container>
+
       <Announcement/>
      <Navbar/>
      
      <Wrapper>
+       
      <ImgContainer>
      <Image src= 'https://www.gizbot.com/images/2020-05/moto-g-fast_159083070760.jpg'/>
      </ImgContainer>
@@ -180,7 +183,7 @@ Read more at: https://www.gizbot.com/mobile/news/xiaomi-s-spring-summer-flagship
        </AddContainer>
       
         </InfoContainer>
-
+      
      </Wrapper>
      <Newsletter/>
      <Footer/>
