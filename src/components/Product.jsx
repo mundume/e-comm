@@ -37,9 +37,10 @@ ${mobile({ flexDirection: 'column', justifyContent: 'space-between' })}
 position:relative;
 ${mobile ({width:"150px", height:"150px",  flexDirection:'row'})};
 
-&:hover ${Info} {
-  opacity:1;
+/** &:hover ${Info} {
+  opacity:1;*/
 }
+
 
  `
 
