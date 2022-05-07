@@ -6,26 +6,29 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Banner from '../components/Banner';
-import { desktop } from '../responsive'
+import { desktop, mobile } from '../responsive'
 import { useMediaQuery } from '@material-ui/core';
 import CategoryGrid from '../components/CategoryGrid'
-
+import Products from './Products';
 import styled from 'styled-components';
 import OfficialStores from './OfficialStores';
 import Headings from './Headings';
 
 const Container = styled.div`
-height:560px;
+height:400px;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 background-color:lightblue;
 
+
 ${desktop ({display:"none"})};
 
 
+
 `
+
 
 
 
@@ -49,9 +52,10 @@ export default function CustomizedInputBase() {
       <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
       
     </Paper>
-    <Headings title= 'Check out our official stores' />
+    
+    
     <OfficialStores/>
-    <Banner/>
+    
     <CategoryGrid/>
     </Container>
     

@@ -17,10 +17,16 @@ const Home = () => {
       <Navbar/>
       <Slider/>
       <Location/>
+
       <Banner/>
       <Headings title="Trending"/>
       <Products/>
-      <Banner/>
+      <Headings title="flash sales"/>
+      <Products/>
+      <Headings title="Lovers Palace"/>
+      <Products/>
+      <Headings title="Clearence sales"/>
+      <Products/>
       <Categories/>
       <Newsletter/>
       <Footer/>

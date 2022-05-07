@@ -5,6 +5,7 @@ import Announcement from '../components/Announcement'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { mobile } from '../responsive'
+import { useNavigate } from 'react-router-dom'
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -177,6 +178,9 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Navbar />
@@ -184,12 +188,16 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton type='filled'>CONTINUE SHOPPING</TopButton>
+          <TopButton type='filled' onClick={()=>{
+            navigate("/")
+          }}>CONTINUE SHOPPING</TopButton>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">COMPLETE ORDER</TopButton>
+          <TopButton type="filled" onClick={()=>{
+            navigate("/checkout")
+          }}>COMPLETE ORDER</TopButton>
         </Top>
         <Bottom>
           <Info>

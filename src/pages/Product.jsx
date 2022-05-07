@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import { mobile } from '../responsive'
+import { useNavigate } from 'react-router-dom'
 
 const Container = styled.div`
 `
@@ -132,6 +133,7 @@ font-weight:500;
 
 
 const Product = () => {
+  const navigate = useNavigate();
   return (
     <Container>
 
@@ -179,7 +181,9 @@ Read more at: https://www.gizbot.com/mobile/news/xiaomi-s-spring-summer-flagship
         <Add/>
 
         </AmountContainer>
-        <Button>ADD TO CART</Button>
+        <Button onClick={()=>{
+          navigate('/cart')
+        }}>ADD TO CART</Button>
        </AddContainer>
       
         </InfoContainer>

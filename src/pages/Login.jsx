@@ -2,6 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -72,6 +73,7 @@ justify-content:center;
 `
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
    <Container>
         <Wrapper>
@@ -79,7 +81,9 @@ const Login = () => {
         <Form>
             <Input type="text" placeholder="Username" />
             <Input type="text" placeholder="Password" />
-            <Button>Sign In</Button>
+            <Button onClick={()=>{
+              navigate('/')
+            }}>Sign In</Button>
             <Link>Forgot Password?</Link>
             <Link>Create Account</Link>
         </Form>

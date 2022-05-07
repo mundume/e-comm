@@ -1,6 +1,7 @@
 import { FavoriteBorderOutlined, Rowing, SearchOutlined, Send, ShoppingCartOutlined } from '@mui/icons-material'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
+import { useNavigate } from 'react-router-dom'
 import Headings from './Headings'
 
 
@@ -35,7 +36,7 @@ ${mobile({ flexDirection: 'column', justifyContent: 'space-between' })}
  align-items:center;
  justify-content:center;
 position:relative;
-${mobile ({width:"150px", height:"150px",  flexDirection:'row'})};
+${mobile ({width:"140px", height:"140px",  flexDirection:'row', margin:'2px'})};
 
 /** &:hover ${Info} {
   opacity:1;*/
@@ -98,6 +99,7 @@ ${mobile ({width:"150px", height:"150px",  flexDirection:'row'})};
 const   Text = styled.div``
  
  const Product = ({ item }) => {
+  const navigate = useNavigate()
   return (
     <Dinner>
     <Container>
@@ -111,7 +113,9 @@ const   Text = styled.div``
           <ShoppingCartOutlined />
           
         </Icon>
-        <Button>
+        <Button onClick={()=>{
+          navigate('/product')
+        }}>
          {item.price}
         </Button>
         <Icon style={{color:'#1E5162'}}>

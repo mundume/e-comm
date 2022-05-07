@@ -1,13 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import Headings from './Headings'
+import { useNavigate } from 'react-router-dom'
 
 const Container = styled.div`
-height:200px;
+height:100px;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 align-items:center;
+
 
 
 `
@@ -16,7 +18,7 @@ const Button = styled.button`
   width: auto;
   border:none;
   padding: 10px;
-  margin:10px 5px;
+  margin:5px;
   color: rgba(0,0,0,0.8);
   cursor:pointer;
   font-weight: 600;
@@ -31,16 +33,45 @@ const Button = styled.button`
 
 
 const OfficialStores = () => {
+  const navigate = useNavigate();
   return (
     <Container>
-    <Button>NOKIA</Button>
-    <Button>XIAOMI</Button>
-    <Button>HOTPOINT</Button>
-    <Button>SAMSUNG</Button>
-    <Button>MAYBELINE</Button>
-    <Button>TECNO</Button>
-    <Button>EABL</Button>
-    <Button>REALME</Button>
+    <Button onClick={()=>{
+      navigate('/productlist')
+    }}>NOKIA</Button>
+    <Button
+    onClick={()=>{
+      navigate('/productlist')
+    }}>XIAOMI</Button>
+    <Button
+    onClick={()=>{
+      navigate('/productlist')
+    }}
+    >HOTPOINT</Button>
+    <Button
+    onClick={()=>{
+      navigate('/productlist')
+    }}
+    >SAMSUNG</Button>
+    <Button
+    onClick={()=>{
+      navigate('/productlist')
+    }}
+    >MAYBELINE</Button>
+    <Button
+    onClick={()=>{
+      navigate('/productlist')
+    }}
+    >TECNO</Button>
+    <Button
+    onClick={()=>{
+      navigate('/productlist')
+    }}
+    >EABL</Button>
+    <Button
+    onClick={()=>{
+      navigate('/productlist')
+    }}>REALME</Button>
     </Container>
   )
 }

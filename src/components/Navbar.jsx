@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Badge } from '@mui/material'
 import { mobile } from '../responsive'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Container = styled.div`
 height:60px;
@@ -57,6 +58,7 @@ text-align:center;
 `
 const Logo = styled.h1`
 font-weight:bold;
+cursor:pointer;
 ${mobile ({fontSize:"24px"})};
 
 `
@@ -76,8 +78,18 @@ margin-left:20px;
 ${mobile ({fontSize:"12px" , marginLeft:"10px"})};
 `
 
-
+const Button = styled.button`
+  width: auto;
+  border:none;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 5px;
+  color: rgba(0,0,0,0.8);
+  cursor:pointer;
+  font-weight: 600;
+  ${mobile ({fontSize:"12px" , marginLeft:"10px"})};`
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <Container>
         <Wrapper>
@@ -89,11 +101,15 @@ const Navbar = () => {
         </SearchContainer>
         </Left>
         <Center>
-            <Logo>KarT</Logo>
+            <Logo><Link to='/' style={{color:'rgba(0,0,0,0.8)', textDecoration:'none'}} >Kart</Link></Logo>
         </Center>
         <Right>
-        <MenuItem>Register </MenuItem>
-        <MenuItem>SignIn </MenuItem>
+        <Button onClick={()=>{
+         navigate('/register')
+        }}>Register </Button>
+        <Button onClick={()=>{
+          navigate('/login')
+        }}>SignIn</Button>
         <MenuItem> 
         <Badge badgeContent={4} color="primary">
         <ShoppingCartOutlined/>
