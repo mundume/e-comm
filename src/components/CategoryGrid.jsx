@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
+import { desktop } from '../responsive';
 
 const images = [
   {
@@ -40,11 +41,10 @@ const images = [
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
   height: "100px",
- // [themebreakpoints.down('sm')]: {
-      
-//width: '100% !important', // Overrides inline-style
-  //  height: 100,
- // },
+  width:'auto',
+  [theme.breakpoints.up('lg')]: {
+    maxWidth: '700px',
+  },
   '&:hover, &.Mui-focusVisible': {
     zIndex: 1,
     '& .MuiImageBackdrop-root': {
@@ -57,6 +57,7 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
       border: '4px solid currentColor',
     },
   },
+  
 }));
 
 const ImageSrc = styled('span')({

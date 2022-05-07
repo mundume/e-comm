@@ -67,19 +67,21 @@ const Right = styled.div`
 flex:1;
 display:flex;
 align-items:center;
-justify-content:flex-end;
-${mobile ({flex:2, justifyContent:"space-around"})};
+justify-content:center;
+
+${mobile ({flex:2, justifyContent:"space-around", alignItems:"center"})};
 
 `
 const MenuItem = styled.div`
 font-size:14px;
 curson:pointer;
 margin-left:20px;
-${mobile ({fontSize:"12px" , marginLeft:"10px"})};
+${mobile ({fontSize:"10px" , marginLeft:"5px", padding:"0px 7px"})};
 `
 
 const Button = styled.button`
   width: auto;
+  margin-left:20px; 
   border:none;
   padding: 10px;
   background-color: lightblue;
@@ -87,7 +89,7 @@ const Button = styled.button`
   color: rgba(0,0,0,0.8);
   cursor:pointer;
   font-weight: 600;
-  ${mobile ({fontSize:"12px" , marginLeft:"10px"})};`
+  ${mobile ({fontSize:"12px" , marginLeft:"3px"})};`
 const Navbar = () => {
   const navigate = useNavigate();
   return (

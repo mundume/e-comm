@@ -6,7 +6,7 @@ import { mobile } from '../responsive';
 import { ArrowRightOutlined } from '@mui/icons-material';
 
 const Container = styled.div`
-max-height:150px;
+
 padding: 20px;
 display: flex;
 flex-wrap:wrap;

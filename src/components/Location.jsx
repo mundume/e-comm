@@ -23,7 +23,7 @@ justify-content:center;
 background-color:lightblue;
 
 
-${desktop ({display:"none"})};
+
 
 
 

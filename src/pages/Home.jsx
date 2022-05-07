@@ -15,9 +15,7 @@ const Home = () => {
     <div>
       <Announcement/>
       <Navbar/>
-      <Slider/>
       <Location/>
-
       <Banner/>
       <Headings title="Trending"/>
       <Products/>

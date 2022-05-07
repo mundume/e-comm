@@ -30,7 +30,7 @@ ${mobile({ flexDirection: 'column', justifyContent: 'space-between' })}
  const Container = styled.div`
  flex: 1;
  margin:5px;
- max-width:280px;
+ width:280px;
  height:350px;
  display:flex;
  align-items:center;
