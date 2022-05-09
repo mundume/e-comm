@@ -75,8 +75,8 @@ ${mobile ({flex:2, justifyContent:"space-around", alignItems:"center"})};
 const MenuItem = styled.div`
 font-size:14px;
 curson:pointer;
-margin-left:20px;
-${mobile ({fontSize:"10px" , marginLeft:"5px", padding:"0px 7px"})};
+margin-left:10px;
+${mobile ({fontSize:"10px" , marginRight:"10px", padding:"0px 7px"})};
 `
 
 const Button = styled.button`
@@ -89,7 +89,7 @@ const Button = styled.button`
   color: rgba(0,0,0,0.8);
   cursor:pointer;
   font-weight: 600;
-  ${mobile ({fontSize:"12px" , marginLeft:"3px"})};`
+  ${mobile ({fontSize:"12px" , marginLeft:"8px"})};`
 const Navbar = () => {
   const navigate = useNavigate();
   return (

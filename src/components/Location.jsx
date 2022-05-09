@@ -15,7 +15,7 @@ import OfficialStores from './OfficialStores';
 import Headings from './Headings';
 
 const Container = styled.div`
-height:400px;
+max-height:370px;
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -36,9 +36,9 @@ export default function CustomizedInputBase() {
   return (
 <Container>
 
-<Paper style={{marginBottom:'10px',border:"1px solid lightblue", marginTop:'10px',borderRadius:"10px", padding:"4px"}}
+<Paper style={{marginBottom:'5px',border:"1px solid lightblue", marginTop:'3px',borderRadius:"10px", padding:"4px"}}
       component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center',justifyContent:'center', width: '90%', margin:'auto' }}
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center',justifyContent:'center', width: '90%', maxWidth: '500px', margin: '0 auto', maxHeight: '100px' }}
     >
      
       <InputBase

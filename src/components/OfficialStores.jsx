@@ -4,7 +4,7 @@ import Headings from './Headings'
 import { useNavigate } from 'react-router-dom'
 
 const Container = styled.div`
-height:100px;
+max-height:90px;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;

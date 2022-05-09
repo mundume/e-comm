@@ -41,7 +41,9 @@ const images = [
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
   height: "100px",
-  width:'auto',
+  width:'100%',
+  objectFit: 'cover',
+  overflowX: 'hidden',
   [theme.breakpoints.up('lg')]: {
     maxWidth: '700px',
   },
