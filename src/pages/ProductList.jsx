@@ -6,7 +6,7 @@ import Products from '../components/Products'
 import Newsletter from '../components/Newsletter'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
-
+import { useTranslation } from 'react-i18next'
 
 
 
@@ -49,48 +49,48 @@ ${mobile({margin: "10px 0px" })}
 
 const Option = styled.option`
 font-size:15px;
-
 `
 
 const ProductList = () => {
+const {t} = useTranslation(["Productlists"])
   return (
     <Container>
         <Navbar/>
         <Announcement/>
-        <Title>Clothes</Title>
+        <Title>{t("clothes")}</Title>
         <FilterContainer>
-            <Filter> <FilterText> Filter Products</FilterText>
+            <Filter> <FilterText> {t("filterproduct")}</FilterText>
                 <Select>
                     <Option disabled selected>
-                        All
+                        {t("all")}
                     </Option>
-                    <Option>Phones</Option>
-                    <Option>Clothes</Option>
-                    <Option>Furniture</Option>
-                    <Option>Electronics</Option>
+                    <Option>{t("phones")}</Option>
+                    <Option>{t("clothes")}</Option>
+                    <Option>{t("furniture")}</Option>
+                    <Option>{t("electronics")}</Option>
                     
                 </Select>
 
                 <Select>
                     <Option disabled selected>
-                        Type
+                        {t("type")}
                     </Option>
-                    <Option>Color</Option>
-                    <Option>Price</Option>
-                    <Option>Inn</Option>
-                    <Option>Size</Option>
+                    <Option>{t("color")}</Option>
+                    <Option>{t("price")}</Option>
+                    <Option>{t("size")}</Option>
+                    <Option>{t("inn")}</Option>
                     
                 </Select>
 
              </Filter>
-            <Filter><FilterText>Sort Products</FilterText>
+            <Filter><FilterText>{t("sortproducts")}</FilterText>
             <Select>
                     <Option disabled selected>
-                        All
+                        {t("all")}
                     </Option>
-                    <Option>Newest</Option>
-                    <Option>Popularity</Option>
-                    <Option>Availability</Option>
+                    <Option>{t("newest")}</Option>
+                    <Option>{t("popularity")}</Option>
+                    <Option>{t("availability")}</Option>
                 </Select>
             </Filter>
 

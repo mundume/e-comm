@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import './translate'
 import { render } from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ReactDOM from 'react-dom';
@@ -10,9 +11,10 @@ import ProductList from "./pages/ProductList.jsx";
 import Register from "./pages/Register.jsx";
 import App from './App';
 
+
 const rootElement = document.getElementById("root");
 render(
-  
+  <Suspense fallback={<div>loading...</div>}>
   <BrowserRouter>
   <Routes>
     <Route path="/" element={<App />} />
@@ -26,7 +28,8 @@ render(
 
 
     </Routes>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </Suspense>,
   rootElement
   
 );

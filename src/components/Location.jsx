@@ -13,6 +13,7 @@ import Products from './Products';
 import styled from 'styled-components';
 import OfficialStores from './OfficialStores';
 import Headings from './Headings';
+import { useTranslation } from 'react-i18next';
 
 const Container = styled.div`
 max-height:370px;
@@ -33,6 +34,7 @@ background-color:lightblue;
 
 
 export default function CustomizedInputBase() {
+  const { t } = useTranslation(["Home"]);
   return (
 <Container>
 
@@ -43,7 +45,7 @@ export default function CustomizedInputBase() {
      
       <InputBase
         sx={{ ml: 1, flex: 1  }}
-        placeholder=" Search Product"
+        placeholder={t("searchProduct")}
         inputProps={{ 'aria-label': 'search google maps' }}
       />
       <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">

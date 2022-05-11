@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
 import { desktop } from '../responsive';
-
+import { useTranslation } from 'react-i18next'
 const images = [
   {
     url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Liquor_store_in_Breckenridge_Colorado.jpg/280px-Liquor_store_in_Breckenridge_Colorado.jpg',
@@ -33,12 +33,13 @@ const images = [
   },
   {
     url: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=965&q=80',
-    title: 'Gaming',
+    title: "Gaming",
     width: '33.3%',
   },
 ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
+  
   position: 'relative',
   height: "100px",
   width:'100%',
@@ -106,12 +107,14 @@ const ImageMarked = styled('span')(({ theme }) => ({
 }));
 
 export default function ButtonBases() {
+  const {t, i18n} = useTranslation()
+
+  const title = t('title', {returnObjects: true} )
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
       {images.map((image) => (
         <ImageButton
-          focusRipple
-          key={image.title}
+          
           style={{
             width: image.width,
           }}

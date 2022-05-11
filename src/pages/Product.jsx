@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import { mobile } from '../responsive'
 import { useNavigate } from 'react-router-dom'
-
+import { useTranslation } from 'react-i18next'
 const Container = styled.div`
 `
 
@@ -119,7 +119,7 @@ justify-content:center;
 margin:0px 5px;
 `
 const Button = styled.button`
-padding:15px;
+padding:10px;
 border:2px solid rgba(0,0,0,0.3);
 cursor pointer;
 background-color:rgba(0,0,0,0.1);
@@ -134,6 +134,7 @@ font-weight:500;
 
 const Product = () => {
   const navigate = useNavigate();
+  const {t} = useTranslation (["Product"])
   return (
     <Container>
 

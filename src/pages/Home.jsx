@@ -10,12 +10,14 @@ import Location from '../components/Location'
 import Banner from '../components/Banner'
 import Headings from '../components/Headings'
 import OfficialStores from '../components/OfficialStores'
+import { useTranslation } from 'react-i18next'
 const Home = () => {
+  const {t} = useTranslation(["Home", "common"]);
   return (
     <div>
       <Announcement/>
-      <Navbar/>
-      <Location/>
+      <Navbar></Navbar>
+      <Location ></Location>
       <Banner/>
       <Headings title="Trending"/>
       <Products/>

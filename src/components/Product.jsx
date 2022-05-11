@@ -2,6 +2,7 @@ import { FavoriteBorderOutlined, Rowing, SearchOutlined, Send, ShoppingCartOutli
 import styled from 'styled-components'
 import { mobile } from '../responsive'
 import { useNavigate } from 'react-router-dom'
+
 import Headings from './Headings'
 
 

@@ -1,9 +1,12 @@
-
+import { Suspense } from "react";
 import Home from "./pages/Home.jsx";
 
 const App = () => {
   return( 
-  < Home/>
+    <Suspense fallback={ <div>loading</div>}>
+      <Home />
+    </Suspense>
+  
   
   
   

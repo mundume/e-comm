@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import { Badge } from '@mui/material'
 import { mobile } from '../responsive'
 import { Link, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
 
 const Container = styled.div`
 height:60px;
@@ -22,9 +25,20 @@ flex:1;
 display:flex;
 align-items:center;
 
-
-
-
+`
+const Select = styled.select`
+padding:10px;
+margin-right:20px;
+outline:none;
+border:1px solid lightblue;
+background:none;
+display:flex;
+align-items:center;
+justify-content:center;
+${mobile({ padding:"5px",margin: "-10px 5px 0px" , height:"40px"})}
+`
+const Option = styled.option`
+font-size:15px;
 `
 const Language = styled.span`
 font-size:14px;
@@ -76,6 +90,9 @@ const MenuItem = styled.div`
 font-size:14px;
 curson:pointer;
 margin-left:10px;
+display:flex;
+justify-content:center;
+align-items:center;
 ${mobile ({fontSize:"10px" , marginRight:"10px", padding:"0px 7px"})};
 `
 
@@ -90,13 +107,36 @@ const Button = styled.button`
   cursor:pointer;
   font-weight: 600;
   ${mobile ({fontSize:"12px" , marginLeft:"8px"})};`
+
+
 const Navbar = () => {
+ const {i18n, t} = useTranslation(["common"])
+
+ useEffect(()=>{
+  if(localStorage.getItem("i18nextLng")?.length>1){
+    i18next.changeLanguage("en")
+  }
+
+ },[]);
+ const handleLangChange = (event)=>{
+i18n.changeLanguage(event.target.value);
+ }
   const navigate = useNavigate();
   return (
     <Container>
         <Wrapper>
         <Left>
-        <Language>EN</Language>
+        <Select 
+         value = {localStorage.getItem("i18nextLng")}
+          onChange = {handleLangChange}
+        >
+          <Option value={"en"}>
+              EN
+          </Option>
+          <Option value={"fr"}>FR</Option>
+          
+          
+                </Select>
         <SearchContainer>
             <Input placeholder='search'/>
             <Search style={{color:"gray", fontSize:16}}/>
@@ -108,10 +148,10 @@ const Navbar = () => {
         <Right>
         <Button onClick={()=>{
          navigate('/register')
-        }}>Register </Button>
+        }}>{t("register")} </Button>
         <Button onClick={()=>{
           navigate('/login')
-        }}>SignIn</Button>
+        }}>{t("signin")}</Button>
         <MenuItem> 
         <Badge badgeContent={4} color="primary">
         <ShoppingCartOutlined/>

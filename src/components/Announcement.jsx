@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
-
+import { useTranslation } from 'react-i18next'
 
 const Container = styled.div`
 height:30px;
@@ -16,9 +15,10 @@ font-weight : bold;
 `
 
 const Announcement = () => {
+  const {t} = useTranslation(["common"])
   return (
     <Container>
-        free shipping for all orders over kes 3000!
+        {t("announcements")}
     </Container>
   )
 }

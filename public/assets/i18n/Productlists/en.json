@@ -1,0 +1,17 @@
+{
+    "clothes" : "Clothes",
+    "filterproduct": "Filter Product",
+     "all": "All",
+     "type": "Type",
+     "phones": "Phones",
+     "furniture": "Furniture",
+     "electronics": "Electronics",
+     "sortproducts": "Sort Products",
+     "price": "Price",
+     "size": "Size",
+     "color": "Color",
+     "inn" :"Inn",
+     "newest": "Newest",
+     "popolarity": "Popularity",
+     "availability": "Availability"
+}
