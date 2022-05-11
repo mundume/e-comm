@@ -28,28 +28,28 @@ export const sliderItems = [
   export const categories = [
     {
       id: 1,
-      img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "LADIES WEAR!!",
+      img: "https://www.samsung.com/global/galaxy/main/images/kv_galaxy-s22-ultra_s.jpg",
+      title: "Samsung Galaxy S22",
     },
     {
       id: 2,
-      img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "AWESOME DEALS",
+      img: "https://i01.appmifile.com/webfile/globalimg/0320/TO-B/web-Star-Products/watch-s1-s1active.jpg?width=612&height=612",
+      title: "Xiaomi!",
     },
     {
       id: 3,
-      img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      title: "LIGHT JACKETS",
+      img: "https://www.maybelline.com/~/media/mny/global/homepage-modules/tools-and-service/makeup-studio/mny20_virtual-try-on_girl1_r2.jpg?h=1440&w=1440&la=en-US&hash=B57BDBDF0AE232D591F8E864FDFBA503EAFDBD3F",
+      title: "Maybelline",
     },
     {
-      id: 1,
-      img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "SHIRT STYLE!",
+      id: 4,
+      img: "https://d316acfc88wber.cloudfront.net/global/phones/camon18/Camon18_dynamic.png",
+      title: "TECNO",
     },
     {
       id: 2,
-      img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: " LOVE",
+      img: "https://images.ctfassets.net/wcfotm6rrl7u/12hVmTabVOfaZX2orFYnwn/7317299d96cf5c43dfbfe8491bbf7016/nokia-8_3_5G-polar_night-front_back-int.png?h=400&fm=avif",
+      title: " NOKIA",
     },
     
   ];

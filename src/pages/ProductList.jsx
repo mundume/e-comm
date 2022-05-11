@@ -55,8 +55,8 @@ const ProductList = () => {
 const {t} = useTranslation(["Productlists"])
   return (
     <Container>
-        <Navbar/>
         <Announcement/>
+        <Navbar/>
         <Title>{t("clothes")}</Title>
         <FilterContainer>
             <Filter> <FilterText> {t("filterproduct")}</FilterText>

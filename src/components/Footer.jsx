@@ -2,6 +2,8 @@ import { Facebook, Instagram, Mail, Phone, Room, Twitter } from '@mui/icons-mate
 import React from 'react'
 import styled from 'styled-components'
 import { mobile} from '../responsive'
+import { useTranslation } from 'react-i18next'
+
 
 const Container = styled.div`
 display:flex;
@@ -38,6 +40,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 margin-right:20px;
+cursor:pointer;
 
 `
 
@@ -87,12 +90,13 @@ align-items:center;
 
 
 const Footer = () => {
+    const {t} = useTranslation(["common"])
   return (
     <Container>
         <Left>
        <Logo>KarT</Logo>
        <Description>
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        {t("info")}
        </Description>
          <SocialMedia>
          <SocialIcon color="385999">
@@ -122,7 +126,7 @@ const Footer = () => {
         </List>
         </Center>
         <Right>
-        <Title>Contact Us</Title>
+        <Title>{t("contactus")}</Title>
         <ContactItem><Room style={{marginRight:"10px"}}/>
             237 Main Street, Thika Kenya
         </ContactItem>

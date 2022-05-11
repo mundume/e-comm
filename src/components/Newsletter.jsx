@@ -1,7 +1,7 @@
 import { Send } from '@mui/icons-material'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
-
+import { useTranslation } from 'react-i18next'
 
 
 const Container = styled.div`
@@ -56,14 +56,15 @@ padding:10px;
     }
 `
 const Newsletter = () => {
+  const { t } = useTranslation(["common"])
   return (
     <Container>
-    <Title>Mail Us </Title>
+    <Title> {t("mailus")} </Title>
         <Description>
-          We are always waiting for your feedback!
+          {t("feedback")}
         </Description>
         <InputContainer>
-        <Input placeholder='your email'/>
+        <Input placeholder={t("email")}/>
         <Button>
          <Send/>
         </Button>

@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { mobile } from '../responsive'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -180,24 +181,25 @@ const Button = styled.button`
 const Cart = () => {
 
   const navigate = useNavigate();
+  const {t} = useTranslation(["Cart"]);
 
   return (
     <Container>
-      <Navbar />
       <Announcement />
+      <Navbar />
       <Wrapper>
-        <Title>YOUR BAG</Title>
+        <Title>{t("yourbag")}</Title>
         <Top>
           <TopButton type='filled' onClick={()=>{
             navigate("/")
-          }}>CONTINUE SHOPPING</TopButton>
+          }}> {t("continueshopping")} </TopButton>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
           <TopButton type="filled" onClick={()=>{
             navigate("/checkout")
-          }}>COMPLETE ORDER</TopButton>
+          }}> {t("completeorder")} </TopButton>
         </Top>
         <Bottom>
           <Info>
@@ -206,14 +208,14 @@ const Cart = () => {
                 <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" />
                 <Details>
                   <ProductName>
-                    <b>Product:</b> SHOES
+                    <b>{t("product")}:</b> SHOES
                   </ProductName>
                   <ProductId>
                     <b>ID:</b> 93813718293
                   </ProductId>
                   <ProductColor color="black" />
                   <ProductSize>
-                    <b>Size:</b> 37.5
+                    <b>{t("size")}:</b> 37.5
                   </ProductSize>
                 </Details>
               </ProductDetail>
@@ -232,14 +234,14 @@ const Cart = () => {
                 <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
                 <Details>
                   <ProductName>
-                    <b>Product:</b> T-SHIRT
+                    <b>{t("product")}:</b> T-SHIRT
                   </ProductName>
                   <ProductId>
                     <b>ID:</b> 93813718293
                   </ProductId>
                   <ProductColor color="gray" />
                   <ProductSize>
-                    <b>Size:</b> M
+                    <b>{t("size")}:</b> M
                   </ProductSize>
                 </Details>
               </ProductDetail>
@@ -254,24 +256,24 @@ const Cart = () => {
             </Product>
           </Info>
           <Summary>
-            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummaryTitle> {t("ordersummary")} </SummaryTitle>
             <SummaryItem>
-              <SummaryItemText>Subtotal</SummaryItemText>
+              <SummaryItemText> {t("subtotal")} </SummaryItemText>
               <SummaryItemPrice>CDF 66555</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Estimated Shipping</SummaryItemText>
+              <SummaryItemText> {t("estimatedshipping")} </SummaryItemText>
               <SummaryItemPrice>CDF 6656</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Discount</SummaryItemText>
+              <SummaryItemText> {t("discount")} </SummaryItemText>
               <SummaryItemPrice>CDF4564</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
-              <SummaryItemText>Total</SummaryItemText>
+              <SummaryItemText> {t("total")} </SummaryItemText>
               <SummaryItemPrice>CDF 56645</SummaryItemPrice>
             </SummaryItem>
-            <Button type='filled'>CHECKOUT NOW</Button>
+            <Button type='filled'> {t("checkoutnow")} </Button>
           </Summary>
         </Bottom>
       </Wrapper>

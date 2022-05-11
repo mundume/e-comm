@@ -147,15 +147,13 @@ const Product = () => {
      <Image src= 'https://www.gizbot.com/images/2020-05/moto-g-fast_159083070760.jpg'/>
      </ImgContainer>
         <InfoContainer>
-        <Title>Moto G5 5G</Title>
-        <Desc>Xiaomi is all set to unveil several products at its Spring Summer Flagship event tomorrow (April 27) in India. The brand is launching the flagship Xiaomi 12 Pro 5G, Pad 5, and the Xiaomi Smart TV 5A.
-
-Read more at: https://www.gizbot.com/mobile/news/xiaomi-s-spring-summer-flagship-event-tomorrow-how-to-watch-live-stream-what-to-expect-080340.html</Desc>
+        <Title>{t("title")}</Title>
+        <Desc>{t("desc")} </Desc>
         <Price> CDF 3000</Price>
 
         <FilterContainer>
             <Filter>
-                <FilterTitle>Color</FilterTitle>
+                <FilterTitle> {t("color")}</FilterTitle>
 
                 <FilterColor color="black"/>
                 <FilterColor color="red"/>
@@ -163,7 +161,7 @@ Read more at: https://www.gizbot.com/mobile/news/xiaomi-s-spring-summer-flagship
 
             </Filter>
             <Filter>
-            <FilterTitle>Size</FilterTitle>
+            <FilterTitle>{t("size")}</FilterTitle>
             <FilterSize>
                 <FilterSizeOption>4/64GB</FilterSizeOption>
                < FilterSizeOption>4/128GB</FilterSizeOption>
@@ -184,7 +182,7 @@ Read more at: https://www.gizbot.com/mobile/news/xiaomi-s-spring-summer-flagship
         </AmountContainer>
         <Button onClick={()=>{
           navigate('/cart')
-        }}>ADD TO CART</Button>
+        }}>{t("addtocart")}</Button>
        </AddContainer>
       
         </InfoContainer>

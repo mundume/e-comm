@@ -2,6 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
+import { useTranslation } from 'react-i18next'
 
 
 const Container = styled.div`
@@ -34,7 +35,7 @@ ${mobile({ fontSize:'12px', justifyContent:'space-around'})}
 
 `
 const Title = styled.h1`
-color:white;
+color:rgba(0,0,0,0.8);
 margin-bottom:15px;
 
 `
@@ -49,6 +50,7 @@ cursor:pointer;
 `
 
 const CategoryItem = ({category}) => {
+  const {t} = useTranslation(["common"])
   return (
      
     <Container>
@@ -57,7 +59,7 @@ const CategoryItem = ({category}) => {
         <Info>
             
             <Title>{category.title}</Title>
-            <Button>Shop Now</Button>
+            <Button>{t("shopnow")}</Button>
             </Info>
     </Container>
   )

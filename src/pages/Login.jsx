@@ -3,8 +3,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
 import { useNavigate } from 'react-router-dom'
-
-
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
+import { useEffect } from 'react'
 
 const Container = styled.div`
 width:100vw;
@@ -22,8 +23,23 @@ padding:20px;
 background-color:white;
 
 ${mobile({width: "70%" })}
-
 ` 
+
+const Select = styled.select`
+padding:10px;
+margin-right:20px;
+outline:none;
+border:1px solid lightblue;
+background:none;
+display:flex;
+align-items:center;
+justify-content:center;
+${mobile({ padding:"5px",margin: "-10px 5px 0px" , height:"40px"})}
+`
+const Option = styled.option`
+font-size:15px;
+`
+
 const Title = styled.h1`
 font-size:24px;
 font-weight:400;
@@ -74,18 +90,38 @@ justify-content:center;
 
 const Login = () => {
   const navigate = useNavigate();
+  const {i18n, t} = useTranslation(["Register"])
+
+  useEffect(()=>{
+   if(localStorage.getItem("i18nextLng")?.length>1){
+     i18next.changeLanguage("en")
+   }
+ 
+  },[]);
+  const handleLangChange = (event)=>{
+ i18n.changeLanguage(event.target.value);
+  }
   return (
    <Container>
         <Wrapper>
-         <Title>Sign In</Title>
+        <Select 
+         value = {localStorage.getItem("i18nextLng")}
+          onChange = {handleLangChange}
+        >
+          <Option value={"en"}>
+              EN
+          </Option>
+          <Option value={"fr"}>FR</Option>
+          </Select>
+         <Title>{t("login")}</Title>
         <Form>
-            <Input type="text" placeholder="Username" />
-            <Input type="text" placeholder="Password" />
+            <Input type="text" placeholder= {t("username")} />
+            <Input type="text" placeholder= {t("password")} />
             <Button onClick={()=>{
               navigate('/')
-            }}>Sign In</Button>
-            <Link>Forgot Password?</Link>
-            <Link>Create Account</Link>
+            }}>{t("login")}</Button>
+            <Link>{t("forgotpassword")}</Link>
+            <Link>{t("createaccount")}</Link>
         </Form>
         </Wrapper>
    </Container>
