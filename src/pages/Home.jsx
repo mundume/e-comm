@@ -12,20 +12,20 @@ import Headings from '../components/Headings'
 import OfficialStores from '../components/OfficialStores'
 import { useTranslation } from 'react-i18next'
 const Home = () => {
-  const {t} = useTranslation(["Home", "common"]);
+  const {t} = useTranslation(["Home"]);
   return (
     <div>
       <Announcement/>
       <Navbar></Navbar>
       <Location ></Location>
       <Banner/>
-      <Headings title="Trending"/>
+      <Headings title={t("title1")}/>
       <Products/>
-      <Headings title="flash sales"/>
+      <Headings title={t("title2")}/>
       <Products/>
-      <Headings title="Lovers Palace"/>
+      <Headings title={t("title3")}/>
       <Products/>
-      <Headings title="Clearence sales"/>
+      <Headings title={t("title4")}/>
       <Products/>
       <Categories/>
       <Newsletter/>

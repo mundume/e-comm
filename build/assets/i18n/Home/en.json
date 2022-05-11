@@ -5,5 +5,9 @@
     "kids": "Kids",
     "phones": "Phones",
     "fashion": "Fashion",
-    "gaming" : "Gaming"
+    "gaming" : "Gaming",
+    "title1":"Trending",
+    "title2":"Best Sellers",
+    "title3":"New Arrivals",
+    "title4":"Best Rated"
  }
