@@ -15,7 +15,7 @@ import App from './App';
 const rootElement = document.getElementById("root");
 render(
     <Suspense fallback={<div>Loading...</div>}>
-  
+   
   <BrowserRouter>
   <Routes>
     <Route path="/" element={<App />} />

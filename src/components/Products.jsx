@@ -20,8 +20,9 @@ ${mobile({flexWrap:'noWrap', overflowX:'scroll'})}
 
 
 
-const Products = () => {
-  const [slideIndex, setSlideIndex] = React.useState(0)
+const Products = ({cat, filters, sort}) => {
+  console.log(cat, filters, sort)
+  
   return (
     <Container>
 

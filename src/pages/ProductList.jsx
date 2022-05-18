@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import Announcement from '../components/Announcement'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -7,6 +7,7 @@ import Newsletter from '../components/Newsletter'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
 import { useTranslation } from 'react-i18next'
+import {useLocation} from 'react-router-dom'
 
 
 
@@ -52,6 +53,19 @@ font-size:15px;
 `
 
 const ProductList = () => {
+    const location = useLocation();
+    const cat = location.pathname.split("/")[2]
+    const [filters , setFilters] = useState({})
+    const [sort , setSort] = useState("newest")
+    const handleFilters = (e) => {
+        const value = e.target.value;
+
+        setFilters({
+            ...filters,
+            [e.target.name] : value
+        })
+    }
+
 const {t} = useTranslation(["Productlists"])
   return (
     <Container>
@@ -60,8 +74,8 @@ const {t} = useTranslation(["Productlists"])
         <Title>{t("clothes")}</Title>
         <FilterContainer>
             <Filter> <FilterText> {t("filterproduct")}</FilterText>
-                <Select>
-                    <Option disabled selected>
+                <Select name='All' onChange={handleFilters}>
+                    <Option>
                         {t("all")}
                     </Option>
                     <Option>{t("phones")}</Option>
@@ -71,8 +85,8 @@ const {t} = useTranslation(["Productlists"])
                     
                 </Select>
 
-                <Select>
-                    <Option disabled selected>
+                <Select name = "type" onChange={handleFilters}>
+                    <Option>
                         {t("type")}
                     </Option>
                     <Option>{t("color")}</Option>
@@ -84,18 +98,16 @@ const {t} = useTranslation(["Productlists"])
 
              </Filter>
             <Filter><FilterText>{t("sortproducts")}</FilterText>
-            <Select>
-                    <Option disabled selected>
-                        {t("all")}
-                    </Option>
-                    <Option>{t("newest")}</Option>
-                    <Option>{t("popularity")}</Option>
-                    <Option>{t("availability")}</Option>
+            <Select onChange={e=>setSort(e.target.value)}>
+
+                    <Option value="newest">{t("newest")}</Option>
+                    <Option value = "popular">{t("popularity")}</Option>
+                    <Option value="available">{t("availability")}</Option>
                 </Select>
             </Filter>
 
         </FilterContainer>
-        <Products/>
+        <Products cat= {cat} filters= {filters} sort={sort} />
         <Newsletter/>
         <Footer/>
     </Container>
