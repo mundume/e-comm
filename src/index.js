@@ -14,16 +14,17 @@ import App from './App';
 
 const rootElement = document.getElementById("root");
 render(
-  <Suspense fallback={<div>loading...</div>}>
+    <Suspense fallback={<div>Loading...</div>}>
+  
   <BrowserRouter>
   <Routes>
     <Route path="/" element={<App />} />
-    <Route path="/cart" element={<Cart />} />
+    <Route path="cart" element={<Cart />} />
     
-    <Route path="/login" element={<Login />} />
-    <Route path="/product" element={<Product />} />
-    <Route path="/productlist" element={<ProductList />} />
-    <Route path="/register" element={<Register />} />
+    <Route path="login" element={<Login />} />
+    <Route path="product/:id" element={<Product />} />
+    <Route path="products/:category" element={<ProductList />} />
+    <Route path="register" element={<Register />} />
     
 
 

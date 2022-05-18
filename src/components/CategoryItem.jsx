@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
 import { useTranslation } from 'react-i18next'
+import { useNavigate} from 'react-router-dom'
 
 
 const Container = styled.div`
@@ -50,17 +51,22 @@ cursor:pointer;
 `
 
 const CategoryItem = ({category}) => {
+  const navigate = useNavigate()
   const {t} = useTranslation(["common"])
   return (
      
     <Container>
-   
-        <Image src={category.img}/>
+
+       <Image src={category.img}/>
         <Info>
             
             <Title>{category.title}</Title>
-            <Button>{t("shopnow")}</Button>
+            <Button onClick={()=>{
+          navigate(`/products/${category.cat}`)
+        }}>{t("shopnow")}</Button>
             </Info>
+      
+        
     </Container>
   )
 }

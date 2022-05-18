@@ -30,26 +30,31 @@ export const sliderItems = [
       id: 1,
       img: "https://www.samsung.com/global/galaxy/main/images/kv_galaxy-s22-ultra_s.jpg",
       title: "Samsung Galaxy S22",
+      cat: "Smartphones",
     },
     {
       id: 2,
       img: "https://i01.appmifile.com/webfile/globalimg/0320/TO-B/web-Star-Products/watch-s1-s1active.jpg?width=612&height=612",
       title: "Xiaomi!",
+      cat: "Smartwatches",
     },
     {
       id: 3,
       img: "https://www.maybelline.com/~/media/mny/global/homepage-modules/tools-and-service/makeup-studio/mny20_virtual-try-on_girl1_r2.jpg?h=1440&w=1440&la=en-US&hash=B57BDBDF0AE232D591F8E864FDFBA503EAFDBD3F",
       title: "Maybelline",
+      cat: "Makeup",
     },
     {
       id: 4,
       img: "https://d316acfc88wber.cloudfront.net/global/phones/camon18/Camon18_dynamic.png",
       title: "TECNO",
+      cat: "Smartphones",
     },
     {
       id: 2,
       img: "https://images.ctfassets.net/wcfotm6rrl7u/12hVmTabVOfaZX2orFYnwn/7317299d96cf5c43dfbfe8491bbf7016/nokia-8_3_5G-polar_night-front_back-int.png?h=400&fm=avif",
       title: " NOKIA",
+      cat: "Smartphones",
     },
     
   ];
