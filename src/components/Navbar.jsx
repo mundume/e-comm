@@ -99,13 +99,16 @@ ${mobile ({fontSize:"10px" , marginRight:"10px", padding:"0px 7px"})};
 const Button = styled.button`
   width: auto;
   margin-left:20px; 
-  border:none;
   padding: 10px;
-  background-color: lightblue;
-  border-radius: 5px;
+  border: 1px solid lightblue;
+  background-color:white;
   color: rgba(0,0,0,0.8);
   cursor:pointer;
   font-weight: 600;
+
+  &:hover{
+    background-color:lightblue;
+  }
   ${mobile ({fontSize:"12px" , marginLeft:"8px"})};`
 
 

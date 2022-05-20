@@ -74,25 +74,25 @@ const {t} = useTranslation(["Productlists"])
         <Title>{t("clothes")}</Title>
         <FilterContainer>
             <Filter> <FilterText> {t("filterproduct")}</FilterText>
-                <Select name='All' onChange={handleFilters}>
-                    <Option>
-                        {t("all")}
+                <Select name='color' onChange={handleFilters}>
+                    <Option disabled selected>
+                        Colors
                     </Option>
-                    <Option>{t("phones")}</Option>
-                    <Option>{t("clothes")}</Option>
-                    <Option>{t("furniture")}</Option>
-                    <Option>{t("electronics")}</Option>
+                    <Option>yellow</Option>
+                    <Option>blue</Option>
+                    <Option>white</Option>
+                    <Option>red</Option>
                     
                 </Select>
 
-                <Select name = "type" onChange={handleFilters}>
+                <Select name = "size" onChange={handleFilters}>
                     <Option>
-                        {t("type")}
+                        Size
                     </Option>
-                    <Option>{t("color")}</Option>
-                    <Option>{t("price")}</Option>
-                    <Option>{t("size")}</Option>
-                    <Option>{t("inn")}</Option>
+                    <Option>S</Option>
+                    <Option>M</Option>
+                    <Option>L</Option>
+                    <Option>XL</Option>
                     
                 </Select>
 
