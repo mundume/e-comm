@@ -56,8 +56,11 @@ ${mobile ({width:"140px", height:"140px",  flexDirection:'row', margin:'2px'})};
  `
 
  const Image = styled.img`
- height:75%;
+ height:80%;
+ width:100%;
  z-index:2;
+ overflow:none;
+ ${mobile ({height:"100%", width:'100%'})};
  `
 
  const Button = styled.button`
@@ -106,7 +109,7 @@ const   Text = styled.div``
     <Container>
       <Circle />
       
-      <Image src={item.img} />
+      <Image src={item.image} />
       <Info>
         
         <Icon style={{color:'#1E5162'}}>
