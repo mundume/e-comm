@@ -4,6 +4,7 @@ import { mobile } from '../responsive'
 import { useNavigate } from 'react-router-dom'
 
 import Headings from './Headings'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
 
 
@@ -124,7 +125,9 @@ const   Text = styled.div``
         </Button>
         <Icon style={{color:'#1E5162'}}>
          
-          <FavoriteBorderOutlined />
+           <FavoriteBorderOutlined />
+           
+          
           
         </Icon>
          

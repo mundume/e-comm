@@ -1,6 +1,6 @@
 import { Add, Remove } from '@mui/icons-material'
 import { Grid } from '@mui/material'
-import React from 'react'
+import {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Announcement from '../components/Announcement'
 import Footer from '../components/Footer'
@@ -9,6 +9,9 @@ import Newsletter from '../components/Newsletter'
 import { mobile } from '../responsive'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import {useLocation} from 'react-router-dom'
+import axios from 'axios'
+import { publicRequest } from '../requstMethods'
 const Container = styled.div`
 `
 
@@ -133,8 +136,27 @@ font-weight:500;
 
 
 const Product = () => {
+  const location = useLocation()
+  const id = location.pathname.split("/")[2]
+  const [product, setProduct] = useState({})
   const navigate = useNavigate();
   const {t} = useTranslation (["Product"])
+
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try{
+        const response = await publicRequest.get("/products/find/" + id)
+      const data =  response.data
+      setProduct(data)
+
+      }catch(err){
+        console.log(err)
+      }
+      
+    };
+    getProduct()
+  }, [id])
   return (
     <Container>
 
@@ -144,7 +166,7 @@ const Product = () => {
      <Wrapper>
        
      <ImgContainer>
-     <Image src= 'https://www.gizbot.com/images/2020-05/moto-g-fast_159083070760.jpg'/>
+     <Image src= {product.image}/>
      </ImgContainer>
         <InfoContainer>
         <Title>{t("title")}</Title>

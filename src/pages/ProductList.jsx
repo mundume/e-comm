@@ -71,7 +71,7 @@ const {t} = useTranslation(["Productlists"])
     <Container>
         <Announcement/>
         <Navbar/>
-        <Title>{t("clothes")}</Title>
+        <Title>{cat}</Title>
         <FilterContainer>
             <Filter> <FilterText> {t("filterproduct")}</FilterText>
                 <Select name='color' onChange={handleFilters}>
@@ -101,8 +101,8 @@ const {t} = useTranslation(["Productlists"])
             <Select onChange={e=>setSort(e.target.value)}>
 
                     <Option value="newest">{t("newest")}</Option>
-                    <Option value = "popular">{t("popularity")}</Option>
-                    <Option value="available">{t("availability")}</Option>
+                    <Option value = "asc">{t("popularity")}(asc)</Option>
+                    <Option value="desc">{t("availability")}(desc)</Option>
                 </Select>
             </Filter>
 
