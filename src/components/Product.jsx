@@ -119,11 +119,13 @@ const   Text = styled.div``
           
         </Icon>
         <Button onClick={()=>{
-          navigate('/product')
+          navigate(`/product/${item._id}`)
         }}>
          {item.price}
         </Button>
-        <Icon style={{color:'#1E5162'}}>
+        <Icon style={{color:'#1E5162'}} onClick ={()=>{
+          navigate(`/product/${item._id}`)
+        }}>
          
            <FavoriteBorderOutlined />
            

@@ -139,6 +139,9 @@ const Product = () => {
   const location = useLocation()
   const id = location.pathname.split("/")[2]
   const [product, setProduct] = useState({})
+  const [quantity, setQuantity] = useState(1)
+  const [color, setColor] = useState("")
+  const [size, setSize] = useState("")
   const navigate = useNavigate();
   const {t} = useTranslation (["Product"])
 
@@ -157,6 +160,17 @@ const Product = () => {
     };
     getProduct()
   }, [id])
+  const handleQuantity = (type) => {
+    if(type ==="dec"){
+     quantity>1 && setQuantity(quantity - 1)
+    }else{
+      setQuantity(quantity + 1)
+    }
+   
+  }
+  const handleClick = () => {
+    //update Cart
+  }
   return (
     <Container>
 
@@ -169,42 +183,41 @@ const Product = () => {
      <Image src= {product.image}/>
      </ImgContainer>
         <InfoContainer>
-        <Title>{t("title")}</Title>
-        <Desc>{t("desc")} </Desc>
-        <Price> CDF 3000</Price>
+        <Title> {product.name} </Title>
+        <Desc>{product.description} </Desc>
+        <Price> CDF {product.price}</Price>
 
         <FilterContainer>
             <Filter>
                 <FilterTitle> {t("color")}</FilterTitle>
-
-                <FilterColor color="black"/>
-                <FilterColor color="red"/>
-                <FilterColor color="darkblue"/>
+                {product.color?.map(color => (
+                    <FilterColor key = {color} color={color} onClick={()=>setColor(color)}/>
+                ))}
+               
+                
 
             </Filter>
             <Filter>
             <FilterTitle>{t("size")}</FilterTitle>
-            <FilterSize>
-                <FilterSizeOption>4/64GB</FilterSizeOption>
-               < FilterSizeOption>4/128GB</FilterSizeOption>
-               < FilterSizeOption>6/64GB</FilterSizeOption>
-               < FilterSizeOption>6/128GB</FilterSizeOption>
-               < FilterSizeOption>8/128GB</FilterSizeOption>
-
+            <FilterSize onChange={(e)=>setSize(e.target.value)}>
+             {product.size?.map((size)=>(
+               <FilterSizeOption key={size}>{size
+               }</FilterSizeOption>
+             ))} 
+              
+             
             </FilterSize>
             </Filter>
         </FilterContainer>
  
        <AddContainer>
         <AmountContainer>
-        <Remove/>
-        <Amount>1</Amount>
-        <Add/>
+        <Remove onClick={()=>handleQuantity("dec")}/>
+        <Amount>{quantity}</Amount>
+        <Add onClick={()=>handleQuantity("inc")}  />
 
         </AmountContainer>
-        <Button onClick={()=>{
-          navigate('/cart')
-        }}>{t("addtocart")}</Button>
+        <Button onClick={handleClick}>{t("addtocart")}</Button>
        </AddContainer>
       
         </InfoContainer>
