@@ -12,6 +12,8 @@ import { useTranslation } from 'react-i18next'
 import {useLocation} from 'react-router-dom'
 import axios from 'axios'
 import { publicRequest } from '../requstMethods'
+import { addProduct } from '../redux/cartRedux'
+import { useDispatch } from 'react-redux'
 const Container = styled.div`
 `
 
@@ -143,6 +145,7 @@ const Product = () => {
   const [color, setColor] = useState("")
   const [size, setSize] = useState("")
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   const {t} = useTranslation (["Product"])
 
 
@@ -170,6 +173,10 @@ const Product = () => {
   }
   const handleClick = () => {
     //update Cart
+    dispatch(
+      addProduct({...product, quantity, color, size})
+    );
+    
   }
   return (
     <Container>

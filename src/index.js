@@ -10,12 +10,15 @@ import Product from "./pages/Product.jsx";
 import ProductList from "./pages/ProductList.jsx";
 import Register from "./pages/Register.jsx";
 import App from './App';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 
 const rootElement = document.getElementById("root");
 render(
+  <Provider store={store}>
     <Suspense fallback={<div>Loading...</div>}>
-   
+  
   <BrowserRouter>
   <Routes>
     <Route path="/" element={<App />} />
@@ -30,7 +33,11 @@ render(
 
     </Routes>
   </BrowserRouter>
-  </Suspense>,
+  
+  </Suspense>
+  </Provider>
+  ,
+
   rootElement
   
 );

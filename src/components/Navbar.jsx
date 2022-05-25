@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import i18next from 'i18next'
+import { useSelector } from 'react-redux'
 
 const Container = styled.div`
 height:60px;
@@ -113,6 +114,8 @@ const Button = styled.button`
 
 
 const Navbar = () => {
+  const quantity =  useSelector (state => state.cart.quantity)
+
  const {i18n, t} = useTranslation(["common"])
 
  useEffect(()=>{
@@ -156,7 +159,7 @@ i18n.changeLanguage(event.target.value);
           navigate('/login')
         }}>{t("signin")}</Button>
         <MenuItem> 
-        <Badge badgeContent={4} color="primary">
+        <Badge badgeContent={quantity} color="primary">
         <ShoppingCartOutlined/>
         </Badge>
         </MenuItem>
