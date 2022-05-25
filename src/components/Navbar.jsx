@@ -36,7 +36,7 @@ background:none;
 display:flex;
 align-items:center;
 justify-content:center;
-${mobile({ padding:"5px",margin: "-10px 5px 0px" , height:"40px"})}
+${mobile({ padding:"5px", margin: "-10px 5px 0px" , height:"40px"})}
 `
 const Option = styled.option`
 font-size:15px;
@@ -159,7 +159,9 @@ i18n.changeLanguage(event.target.value);
           navigate('/login')
         }}>{t("signin")}</Button>
         <MenuItem> 
-        <Badge badgeContent={quantity} color="primary">
+        <Badge badgeContent={quantity} color="primary" onClick= {()=>{
+          navigate('/cart')
+        }}>
         <ShoppingCartOutlined/>
         </Badge>
         </MenuItem>
