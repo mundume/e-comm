@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout';
 import {useState, useEffect} from 'react'
+import { withRouter } from 'react-router-dom';
 
 import  {userRequest} from "../requstMethods";
 
@@ -188,31 +189,34 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
-  const cart = useSelector (state => state.cart);
+  const cart = useSelector ((state) => state.cart);
 
  const [stripeToken , setStripeToken] = useState(null);
- const history = useNavigate()
+ const navigate = useNavigate();
   const onToken  = (token) => {
   setStripeToken(token);
-  console.log(token);
+  console.log(stripeToken);
   };
  
-  const navigate = useNavigate();
+
   const {t} = useTranslation(["Cart"]);
   useEffect(()=>{
     const makePayment = async () => {
       try{
-         const res = await userRequest.post('/checkout/payment',{
+         const res = await userRequest.post("/checkout/payment",{
            tokenId: stripeToken.id,
             amount: 500,
+            
           
          });
-         history.push("/sucess", {data:res.data})
+          console.log(res);
+         navigate("/sucess")
+         
       }catch {}
       
     };
   stripeToken && makePayment ()
-  },[stripeToken,cart.total,history("/sucess")])
+  },[stripeToken,cart.total,navigate])
 
   return (
     <Container>
