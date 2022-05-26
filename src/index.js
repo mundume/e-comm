@@ -4,7 +4,7 @@ import { render } from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import Cart from "./pages/Cart.jsx";
-import Home from "./pages/Home.jsx";
+import Sucess from "./pages/Sucess.jsx";
 import Login from "./pages/Login.jsx";
 import Product from "./pages/Product.jsx";
 import ProductList from "./pages/ProductList.jsx";
@@ -28,6 +28,7 @@ render(
     <Route path="product/:id" element={<Product />} />
     <Route path="products/:category" element={<ProductList />} />
     <Route path="register" element={<Register />} />
+    <Route path="sucess" element={<Sucess />} />
     
 
 

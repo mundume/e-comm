@@ -8,6 +8,14 @@ import { mobile } from '../responsive'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import StripeCheckout from 'react-stripe-checkout';
+import {useState, useEffect} from 'react'
+
+import  {userRequest} from "../requstMethods";
+
+const KEY = 'pk_test_51L0LdBC9myrLumxr1GVfOj3BforGOaIp6FEO8ws9jU3JjLmxUYvHsndAaYYu6uADeeNBqupfSQqnsrYj4p2jiiPG005i4xE1IW';
+
+
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -180,11 +188,31 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
-  
   const cart = useSelector (state => state.cart);
 
+ const [stripeToken , setStripeToken] = useState(null);
+ const history = useNavigate()
+  const onToken  = (token) => {
+  setStripeToken(token);
+  console.log(token);
+  };
+ 
   const navigate = useNavigate();
   const {t} = useTranslation(["Cart"]);
+  useEffect(()=>{
+    const makePayment = async () => {
+      try{
+         const res = await userRequest.post('/checkout/payment',{
+           tokenId: stripeToken.id,
+            amount: 500,
+          
+         });
+         history.push("/sucess", {data:res.data})
+      }catch {}
+      
+    };
+  stripeToken && makePayment ()
+  },[stripeToken,cart.total,history("/sucess")])
 
   return (
     <Container>
@@ -256,7 +284,18 @@ const Cart = () => {
               <SummaryItemText> {t("total")} </SummaryItemText>
               <SummaryItemPrice>CDF {cart.total} </SummaryItemPrice>
             </SummaryItem>
-            <Button type='filled'> {t("checkoutnow")} </Button>
+            <StripeCheckout
+              name="Kart"
+              
+              billingAddress
+              shippingAddress
+              description={`Your total is $${cart.total}`}
+              amount={cart.total * 100}
+              token={onToken}
+              stripeKey={KEY}
+            >
+              <Button type = 'filled'>Checkout Now</Button>
+            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>
