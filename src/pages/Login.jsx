@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import i18next from 'i18next'
 import { useEffect } from 'react'
+import { login } from '../redux/apiCalls'
+import {  useDispatch, useSelector } from 'react-redux'
 
 const Container = styled.div`
 width:100vw;
@@ -72,6 +74,10 @@ cursor:pointer;
 font-weight:500;
 margin: auto;
 margin-bottom:10px;
+&:disabled{
+  background-color:lightgray;
+  cursor:not-allowed;
+}
 ` 
 const Link = styled.a`
 margin:5px 0px;
@@ -87,8 +93,19 @@ justify-content:center;
     text-decoration:underline solid #000C66;
 }
 `
+const Error = styled.span`
+color:red;`
 
 const Login = () => {
+  const [username, setUsername] = React.useState('')
+  const [password, setPassword] = React.useState('')
+  const dispatch = useDispatch()
+  const {isFetching,error}= useSelector(state=>state.user)
+
+  const handleClick = (e) => {
+   e.preventDefault()
+   login(dispatch, {username, password})
+  }
   const navigate = useNavigate();
   const {i18n, t} = useTranslation(["Register"])
 
@@ -115,11 +132,11 @@ const Login = () => {
           </Select>
          <Title>{t("login")}</Title>
         <Form>
-            <Input type="text" placeholder= {t("username")} />
-            <Input type="text" placeholder= {t("password")} />
-            <Button onClick={()=>{
-              navigate('/')
-            }}>{t("login")}</Button>
+            <Input type="text" placeholder= {t("username")} onChange={(e)=>setUsername(e.target.value)}/>
+            <Input type="password"  placeholder= {t("password")} onChange={(e)=>setPassword(e.target.value)}
+            />
+            <Button onClick={ handleClick} disabled={isFetching}>{t("login")}</Button>
+            {error && <Error> User not found! </Error>}
             <Link>{t("forgotpassword")}</Link>
             <Link>{t("createaccount")}</Link>
         </Form>
