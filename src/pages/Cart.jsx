@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout';
 import {useState, useEffect} from 'react'
+import axios from 'axios'
 import { withRouter } from 'react-router-dom';
 
 import  {userRequest} from "../requstMethods";
@@ -203,7 +204,7 @@ const Cart = () => {
   useEffect(()=>{
     const makePayment = async () => {
       try{
-         const res = await userRequest.post("/checkout/payment",{
+         const res = await axios.post("http://localhost:5000/api/checkout/payment",{
            tokenId: stripeToken.id,
             amount: 500,
             
@@ -216,7 +217,7 @@ const Cart = () => {
       
     };
   stripeToken && makePayment ()
-  },[stripeToken,cart.total,navigate])
+  },[stripeToken,cart.total,navigate()])
 
   return (
     <Container>
