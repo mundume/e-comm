@@ -205,15 +205,13 @@ const Cart = () => {
       try{
          const res = await userRequest.post("/checkout/payment",{
            tokenId: stripeToken.id,
-           
             amount: 500,
             
            
-         },
-         console.log(res));
+         },);
         
          navigate("/sucess",{ 
-         stripeData: res.data,
+         data: res.data,
         
          });
       }catch {}
